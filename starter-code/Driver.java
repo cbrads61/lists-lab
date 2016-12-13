@@ -26,10 +26,45 @@ public class Driver {
 		//operation. Complete the action
 		
 		//Delete the first, if any, Student with the last name of "Smith"
+		//cheeky answer sorry if its weird to read :)
+			//if ("Smith" is last || towards the end of the list){
+			//		ArrayList is quicker because it can locate the later indexes quicker than a LinkedList;
+			//}else{
+			//		LinkedList is quicker because it doesn't have to shift every item after it removes 1
+
+		System.out.println("LinkedList size before: " + studentLinkedList.size);
+
+		for (int i = 0; i < studentLinkedList.getSize(); i++){
+			Student student = studentLinkedList.get(i);
+			if (student.getLastName().equals("Smith")){
+				studentLinkedList.remove(i);
+			}
+		}
+
+		System.out.println("LinkedList size after: " + studentLinkedList.size);
 		
 		//Change the name of the 3rd entry to "Joe Montana"
+		//ArrayList would be faster because it can locate faster and changing data isnt much of difference between the 2
+
+		String oldFirstName = studentArrayList.get(2).getFirstName();
+		String oldLastName = studentArrayList.get(2).getLastName();
+		System.out.println("3rd Student name before; " + oldFirstName + " " + oldLastName);
+
+		studentArrayList.get(2).setFirstName("Joe");
+		studentArrayList.get(2).setLastName("Montana");
+
+		String newFirstName = studentArrayList.get(2).getFirstName();
+		String newLastName = studentArrayList.get(2).getLastName();
+		System.out.println("3rd Student name after: " + newFirstName + " " + newLastName);
 		
 		//Remove the 10th element
+		//LinkedList would be faster because it wouldn't have to shift Students 11-20 down an index
+
+		System.out.println("10th Student before: " + studentLinkedList.get(9).getFirstName);
+
+		studentLinkedList.remove(9);
+
+		System.out.println("10th Student before: " + studentLinkedList.get(9).getFirstName);
 	}
 	
 	//To generate the ArrayList
